@@ -112,6 +112,8 @@
     "5-map/",
     "7-swap/",
     "8-pick/",
-    "9-difference/"
+    "9-difference/",
+    "10-allow-func/",
+    "11-sort-by/"
   ]
 }
