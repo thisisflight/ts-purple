@@ -114,6 +114,8 @@
     "8-pick/",
     "9-difference/",
     "10-allow-func/",
-    "11-sort-by/"
+    "11-sort-by/",
+    "12-builder/",
+    "13-proxy"
   ]
 }

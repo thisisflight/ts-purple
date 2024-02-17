@@ -1,9 +1,9 @@
 "use strict";
 class Task {
-    constructor(id, date, title) {
-        this.id = id;
-        this.date = date;
-        this.title = title;
+    constructor(props) {
+        this.id = props.id;
+        this.date = props.date;
+        this.title = props.title;
     }
 }
 class TaskList {
@@ -65,7 +65,11 @@ class TaskByDateIterator extends TaskIteratorBase {
 }
 const taskList = new TaskList();
 for (let i = 9; i >= 1; i--) {
-    taskList.addTask(new Task(Math.round(Math.random() * 100), `2024-02-0${i}`, `задача ${i}`));
+    taskList.addTask(new Task({
+        id: Math.round(Math.random() * 100),
+        date: `2024-02-0${i}`,
+        title: `задача ${i}`,
+    }));
 }
 console.log(taskList.getTasks());
 const byDateIterator = taskList.getIterator("byDate");

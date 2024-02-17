@@ -4,8 +4,18 @@ interface ITask {
   title: string;
 }
 
+type Props = { id: number; date: string; title: string };
+
 class Task implements ITask {
-  constructor(public id: number, public date: string, public title: string) {}
+  id: number;
+  date: string;
+  title: string;
+
+  constructor(props: Props) {
+    this.id = props.id;
+    this.date = props.date;
+    this.title = props.title;
+  }
 }
 
 class TaskList {
@@ -90,7 +100,11 @@ class TaskByDateIterator extends TaskIteratorBase {
 const taskList = new TaskList();
 for (let i = 9; i >= 1; i--) {
   taskList.addTask(
-    new Task(Math.round(Math.random() * 100), `2024-02-0${i}`, `задача ${i}`)
+    new Task({
+      id: Math.round(Math.random() * 100),
+      date: `2024-02-0${i}`,
+      title: `задача ${i}`,
+    })
   );
 }
 
